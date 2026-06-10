@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="weather-dashboard.css">
+</head>
+<body>
+    <div class="weather-container">
+        <!-- Header with search -->
+        <header class="weather-header">
+            <h1>Weather Dashboard</h1>
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search city or coordinates..."
+                    class="search-input"
+                >
+                <button id="searchBtn" class="search-btn">Search</button>
+                <button id="locationBtn" class="location-btn" title="Use current location">📍</button>
+            </div>
+        </header>
+
+        <!-- Error message display -->
+        <div id="errorMessage" class="error-message hidden"></div>
+
+        <!-- Loading state -->
+        <div id="loadingState" class="loading-state hidden">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+
+        <!-- Main content -->
+        <main id="weatherContent" class="weather-content hidden">
+            
+            <!-- Current Weather Card -->
+            <section class="current-weather">
+                <div class="weather-header-info">
+                    <div class="location-info">
+                        <h2 id="locationName">--</h2>
+                        <p id="currentDate" class="date">--</p>
+                    </div>
+                    <div class="temperature-display">
+                        <div class="temperature">
+                            <span id="tempValue" class="temp-number">--</span>
+                            <span class="temp-unit">°C</span>
+                        </div>
+                        <p id="weatherDescription" class="weather-desc">--</p>
+                    </div>
+                </div>
+
+                <div class="weather-icon-section">
+                    <img id="weatherIcon" src="" alt="Weather icon" class="weather-icon-large">
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Feels Like</span>
+                        <span id="feelsLike" class="detail-value">--°C</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Humidity</span>
+                        <span id="humidity" class="detail-value">--%</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Wind Speed</span>
+                        <span id="windSpeed" class="detail-value">-- m/s</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Pressure</span>
+                        <span id="pressure" class="detail-value">-- hPa</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Visibility</span>
+                        <span id="visibility" class="detail-value">-- km</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">UV Index</span>
+                        <span id="uvIndex" class="detail-value">--</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5-Day Forecast -->
+            <section class="forecast-section">
+                <h3>5-Day Forecast</h3>
+                <div id="forecastContainer" class="forecast-container">
+                    <!-- Forecast cards will be generated here -->
+                </div>
+            </section>
+
+            <!-- Hourly Weather -->
+            <section class="hourly-section">
+                <h3>Hourly Weather</h3>
+                <div id="hourlyContainer" class="hourly-container">
+                    <!-- Hourly cards will be generated here -->
+                </div>
+            </section>
+
+            <!-- Additional Weather Info -->
+            <section class="additional-info">
+                <h3>Additional Information</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4>Sunrise & Sunset</h4>
+                        <p>🌅 <span id="sunrise">--:--</span></p>
+                        <p>🌇 <span id="sunset">--:--</span></p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Wind Information</h4>
+                        <p>Direction: <span id="windDirection">--</span></p>
+                        <p>Gust: <span id="windGust">-- m/s</span></p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Precipitation</h4>
+                        <p>Rain (1h): <span id="rainVolume">-- mm</span></p>
+                        <p>Clouds: <span id="clouds">--%</span></p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Dew Point</h4>
+                        <p><span id="dewPoint">--°C</span></p>
+                        <p class="small-text">Temperature at which dew forms</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Temperature Unit Toggle -->
+            <div class="temperature-toggle">
+                <button id="celsiusBtn" class="unit-btn active">°C</button>
+                <button id="fahrenheitBtn" class="unit-btn">°F</button>
+            </div>
+        </main>
+
+        <!-- Footer with info -->
+        <footer class="weather-footer">
+            <p>Data provided by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a></p>
+            <p id="lastUpdate" class="last-update">Last updated: --</p>
+        </footer>
+    </div>
+
+    <script src="weather-dashboard.js"></script>
+</body>
+</html>
