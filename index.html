@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BADAK TUNGGAL - Premium Visual Identity & Design Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #07111E;
+            --secondary-dark: #0E1E32;
+            --accent-gold: #D4AF37;
+            --accent-gold-hover: #F3E5AB;
+            --text-light: #F4F6F9;
+            --text-muted: #A0AAB5;
+            --white: #FFFFFF;
+            --chat-bg: #132237;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+        }
+
+        body {
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        header {
+            background-color: rgba(7, 17, 30, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(7, 17, 30, 0.85), rgba(7, 17, 30, 0.95)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%2307111E"/><path d="M0 0l100 100M100 0L0 100" stroke="%23112233" stroke-width="0.5"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-logo {
+            height: 120px;
+            width: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: transparent;
+            color: var(--accent-gold);
+            border: 2px solid var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .cta-secondary {
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+
+        /* Sections General */
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--accent-gold);
+            margin-bottom: 60px;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent-gold);
+            margin: 20px auto 0 auto;
+        }
+
+        /* Filosofi Section */
+        .filosofi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .filosofi-card {
+            background-color: var(--secondary-dark);
+            padding: 40px 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .filosofi-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+
+        .filosofi-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-gold);
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .filosofi-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* Layanan Section */
+        .layanan-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            font-size: 16px;
+            color: var(--text-muted);
+        }
+
+        .layanan-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .layanan-item {
+            background-color: var(--secondary-dark);
+            padding: 30px;
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .layanan-item h4 {
+            font-size: 18px;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .layanan-item p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Medsos & Integrasi Section */
+        .medsos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .medsos-card {
+            background: var(--secondary-dark);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .medsos-card:hover {
+            border-color: var(--accent-gold);
+            background: rgba(212, 175, 55, 0.05);
+            transform: translateY(-3px);
+        }
+
+        .medsos-icon {
+            font-size: 32px;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+        }
+
+        .medsos-name {
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Floating AI Chat Widget */
+        .ai-chat-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 360px;
+            height: 500px;
+            background-color: var(--secondary-dark);
+            border: 1px solid var(--accent-gold);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            z-index: 2000;
+            transition: all 0.3s ease;
+            transform: scale(0);
+            transform-origin: bottom right;
+        }
+
+        .ai-chat-widget.active {
+            transform: scale(1);
+        }
+
+        .ai-chat-header {
+            background-color: var(--primary-dark);
+            padding: 15px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            border-top-left-radius: 11px;
+            border-top-right-radius: 11px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ai-chat-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+
+        .ai-status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #2ecc71;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .ai-chat-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .ai-chat-close:hover {
+            color: var(--accent-gold);
+        }
+
+        .ai-chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .message.bot {
+            background-color: var(--chat-bg);
+            color: var(--text-light);
+            align-self: flex-start;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .message.user {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            align-self: flex-end;
+            font-weight: 500;
+        }
+
+        .ai-chat-input-area {
+            padding: 12px;
+            border-top: 1px solid rgba(160, 170, 181, 0.1);
+            display: flex;
+            gap: 8px;
+        }
+
+        .ai-chat-input {
+            flex: 1;
+            background-color: var(--primary-dark);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            padding: 10px;
+            color: var(--text-light);
+            font-family: inherit;
+            font-size: 13px;
+        }
+
+        .ai-chat-input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        .ai-chat-send {
+            background-color: var(--accent-gold);
+            border: none;
+            color: var(--primary-dark);
+            padding: 0 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .ai-chat-send:hover {
+            background-color: var(--accent-gold-hover);
+        }
+
+        /* Floating Trigger Button */
+        .ai-chat-trigger {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            z-index: 1999;
+            transition: all 0.3s ease;
+        }
+
+        .ai-chat-trigger:hover {
+            transform: scale(1.05);
+            background-color: var(--accent-gold-hover);
+        }
+
+        /* Footer / Kontak */
+        footer {
+            background-color: var(--secondary-dark);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 60px 20px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-gold);
+            font-size: 24px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .footer-info p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .footer-contact h4 {
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .wa-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid var(--accent-gold);
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .wa-link:hover {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(160, 170, 181, 0.1);
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 15px;
+            }
+            section {
+                padding: 60px 20px;
+            }
+            .ai-chat-widget {
+                width: calc(100% - 40px);
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-area">
+                <img src="BADAK TUNGGAL.png" alt="Badak Tunggal Logo" class="logo-img" onerror="this.style.display='none';">
+                <span class="logo-text">BADAK TUNGGAL</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#filosofi">Filosofi</a></li>
+                    <li><a href="#layanan">Layanan</a></li>
+                    <li><a href="#medsos">Medsos</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="BADAK TUNGGAL.png" alt="Badak Tunggal Premium Logo" class="hero-logo" onerror="this.style.display='none';">
+            <h1>BADAK TUNGGAL</h1>
+            <p>Membangun simbol kekuatan dan prestise yang melekat pada setiap merek. Kami membantu klien menonjol, diingat, dan dipercaya melalui desain identitas visual premium.</p>
+            <div class="cta-group">
+                <a href="#kontak" class="cta-btn">Mulai Konsultasi</a>
+                <button onclick="toggleChat()" class="cta-btn cta-secondary">Tanya AI Asisten</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filosofi Section -->
+    <section id="filosofi">
+        <h2 class="section-title">Filosofi Kami</h2>
+        <div class="filosofi-grid">
+            <div class="filosofi-card">
+                <h3>Badak</h3>
+                <p>Merepresentasikan kekuatan, ketahanan, dan keberanian. Mencerminkan semangat pantang menyerah dalam menghadapi segala tantangan bisnis tanpa kehilangan arah.</p>
+            </div>
+            <div class="filosofi-card">
+                <h3>Perisai</h3>
+                <p>Menjadi simbol perlindungan, keandalan, dan integritas. Melambangkan komitmen penuh kami dalam menjaga kualitas serta kepercayaan utama pelanggan.</p>
+            </div>
+            <div class="filosofi-card">
+                <h3>Warna Emas</h3>
+                <p>Menandakan prestise, kejayaan, keberhasilan, kepercayaan diri, dan nilai premium tertinggi untuk citra merek Anda.</p>
+            </div>
+            <div class="filosofi-card">
+                <h3>Biru Tua</h3>
+                <p>Menggambarkan kecerdasan, profesionalitas, kestabilan, serta rasa hormat yang mendalam dalam setiap aspek bisnis.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan Section -->
+    <section id="layanan">
+        <h2 class="section-title">Layanan Profesional</h2>
+        <p class="layanan-intro">Kami menyediakan layanan desain profesional yang berfokus pada identitas visual premium. Setiap karya dirancang dengan riset mendalam, keaslian konsep, dan sentuhan artistik yang membedakan Anda di pasar kompetitif.</p>
+        <div class="layanan-list">
+            <div class="layanan-item">
+                <h4>Desain Logo</h4>
+                <p>Pembuatan logo premium klasik maupun modern yang kokoh, berkarakter, dan mencerminkan visi abadi perusahaan.</p>
+            </div>
+            <div class="layanan-item">
+                <h4>Branding</h4>
+                <p>Pengembangan identitas merek yang konsisten untuk membangun citra kuat dan meningkatkan kepercayaan pasar.</p>
+            </div>
+            <div class="layanan-item">
+                <h4>Desain Kemasan</h4>
+                <p>Desain packaging yang estetis dan proporsional, dirancang khusus untuk menarik target pasar secara efektif.</p>
+            </div>
+            <div class="layanan-item">
+                <h4>Promosi Digital</h4>
+                <p>Materi promosi visual yang kreatif dan strategis guna memperkuat kehadiran digital bisnis Anda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medsos & Integrasi Section -->
+    <section id="medsos">
+        <h2 class="section-title">Koneksi Media Sosial</h2>
+        <p class="layanan-intro">Ikuti perjalanan kreativitas kami, portofolio terbaru, dan update tren desain melalui saluran media sosial resmi BADAK TUNGGAL.</p>
+        <div class="medsos-grid">
+            <a href="https://instagram.com/badaktunggal" target="_blank" class="medsos-card">
+                <div class="medsos-icon">📸</div>
+                <div class="medsos-name">Instagram</div>
+            </a>
+            <a href="https://behance.net/badaktunggal" target="_blank" class="medsos-card">
+                <div class="medsos-icon">🎨</div>
+                <div class="medsos-name">Behance</div>
+            </a>
+            <a href="https://tiktok.com/@badaktunggal" target="_blank" class="medsos-card">
+                <div class="medsos-icon">🎵</div>
+                <div class="medsos-name">TikTok</div>
+            </a>
+            <a href="https://linkedin.com/company/badaktunggal" target="_blank" class="medsos-card">
+                <div class="medsos-icon">💼</div>
+                <div class="medsos-name">LinkedIn</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Floating AI Chat Widget -->
+    <div class="ai-chat-trigger" id="chatTrigger" onclick="toggleChat()">🤖</div>
+    
+    <div class="ai-chat-widget" id="chatWidget">
+        <div class="ai-chat-header">
+            <div class="ai-chat-title">
+                <span class="ai-status-dot"></span>
+                <span>AI Asisten Badak Tunggal</span>
+            </div>
+            <button class="ai-chat-close" onclick="toggleChat()">&times;</button>
+        </div>
+        <div class="ai-chat-messages" id="chatMessages">
+            <div class="message bot">
+                Halo! Saya adalah AI Asisten resmi BADAK TUNGGAL. Ada yang bisa saya bantu terkait filosofi logo, layanan desain premium, atau kontak agensi kami?
+            </div>
+        </div>
+        <div class="ai-chat-input-area">
+            <input type="text" class="ai-chat-input" id="chatInput" placeholder="Ketik pesan Anda di sini..." onkeypress="handleKeyPress(event)">
+            <button class="ai-chat-send" onclick="sendMessage()">Kirim</button>
+        </div>
+    </div>
+
+    <!-- Footer / Kontak -->
+    <footer id="kontak">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>BADAK TUNGGAL</h3>
+                <p>Perpaduan antara kreativitas tingkat tinggi dan strategi bisnis yang presisi, menghasilkan karya visual yang fungsional sekaligus elegan.</p>
+                <p style="margin-top: 20px; font-weight: 600; color: var(--white);">Alamat Kantor:</p>
+                <p>Jl. Pangeran Jaga Lautan, Kp. Pasar Sabtu<br>Ds. Pagenjahan, Kec. Kronjo, Kab. Tangerang</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Hubungi Kami</h4>
+                <p>Siap meningkatkan prestise merek Anda ke tingkat berikutnya? Hubungi tim desainer profesional kami sekarang juga.</p>
+                <a href="https://wa.me/622210870261" target="_blank" class="wa-link">
+                    <span>💬 Chat via WhatsApp</span>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BADAK TUNGGAL. All Rights Reserved. Premium Design & Branding Agency.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleChat() {
+            const widget = document.getElementById('chatWidget');
+            const trigger = document.getElementById('chatTrigger');
+            widget.classList.toggle('active');
+            if(widget.classList.contains('active')) {
+                trigger.style.transform = 'scale(0)';
+            } else {
+                trigger.style.transform = 'scale(1)';
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const messageText = input.value.trim();
+            if (messageText === '') return;
+
+            appendMessage(messageText, 'user');
+            input.value = '';
+
+            setTimeout(() => {
+                const lowerText = messageText.toLowerCase();
+                let reply = "Maaf, saya belum memahami pertanyaan Anda sepenuhnya. Anda bisa langsung berkonsultasi secara mendalam dengan tim desainer kami melalui WhatsApp di bagian bawah halaman!";
+
+                if (lowerText.includes('halo') || lowerText.includes('hai') || lowerText.includes('p')) {
+                    reply = "Halo! Senang bisa menyapa Anda. Ada yang bisa kami bantu dalam membangun identitas visual premium untuk bisnis Anda?";
+                } else if (lowerText.includes('layanan') || lowerText.includes('jasa') || lowerText.includes('bikin')) {
+                    reply = "BADAK TUNGGAL menyediakan layanan desain premium seperti Desain Logo, Branding Perusahaan, Desain Kemasan yang estetis, hingga infografis & Materi Promosi Digital.";
+                } else if (lowerText.includes('logo') || lowerText.includes('filosofi')) {
+                    reply = "Logo kami memiliki makna mendalam: Badak (Kekuatan & Ketahanan), Perisai (Perlindungan & Keandalan), Emas (Prestise & Nilai Premium), serta Biru Tua (Profesionalitas & Kestabilan).";
+                } else if (lowerText.includes('alamat') || lowerText.includes('lokasi') || lowerText.includes('kantor')) {
+                    reply = "Kantor resmi BADAK TUNGGAL berlokasi di Jl. Pangeran Jaga Lautan, Kp. Pasar Sabtu, Ds. Pagenjahan, Kec. Kronjo, Kab. Tangerang.";
+                } else if (lowerText.includes('kontak') || lowerText.includes('wa') || lowerText.includes('nomor')) {
+                    reply = "Anda bisa menghubungi kami via WhatsApp resmi di nomor (+62) 2210870261 untuk penawaran harga menarik!";
+                } else if (lowerText.includes('harga') || lowerText.includes('biaya')) {
+                    reply = "Tarif layanan kami bervariasi tergantung kompleksitas riset dan kebutuhan branding Anda. Silakan hubungi WA kami untuk mendapatkan penawaran eksklusif!";
+                }
+
+                appendMessage(reply, 'bot');
+            }, 800);
+        }
+
+        function appendMessage(text, sender) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', sender);
+            messageElement.innerText = text;
+            messagesContainer.appendChild(messageElement);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+    </script>
+</body>
+</html>
